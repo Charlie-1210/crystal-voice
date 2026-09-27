@@ -1,0 +1,48 @@
+body {
+  font-family: var(--body);
+  font-size: var(--step-0);
+  line-height: 1.72;
+  color: var(--halo);
+  font-weight: 400;
+  letter-spacing: .005em;
+}
+
+h1, h2, h3, h4, .display {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+
+h2 { font-size: var(--step-3); }
+h3 { font-size: var(--step-2); letter-spacing: -.012em; }
+h4 { font-size: var(--step-1); letter-spacing: -.008em; }
+
+p { text-wrap: pretty; }
+
+.lede {
+  font-size: var(--step-1);
+  line-height: 1.6;
+  color: var(--rose-soft);
+  max-width: 52ch;
+}
+
+.prose { max-width: var(--measure); color: var(--muted); }
+.prose p + p { margin-top: var(--space-3); }
+.prose strong { color: var(--halo); font-weight: 700; }
+
+.data {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.jp {
+  font-family: var(--body);
+  letter-spacing: .1em;
+  font-weight: 500;
+}
+
+::selection { background: var(--rose); color: var(--void); }

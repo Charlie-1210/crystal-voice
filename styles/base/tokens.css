@@ -1,0 +1,67 @@
+/* ============================================================
+   tokens.css — sistema de diseño de ARIA STATION
+   Identidad: "resonancia" — el planeta ARIA se describe
+   oficialmente como un mundo en armonía con el sonido y la luz.
+   Toda la paleta y la retícula parten de esa idea.
+   ============================================================ */
+
+:root {
+  /* --- Color: fondo (tinta violeta, nunca negro puro) --- */
+  --void:        #07050D;
+  --deep:        #100A1F;
+  --veil:        #171030;
+  --veil-hi:     #221845;
+
+  /* --- Color: acentos --- */
+  --rose:        #F2A9C8;   /* IA */
+  --rose-soft:   #FBD9E7;
+  --violet:      #8E7CFF;   /* resonancia */
+  --violet-deep: #5B47D6;
+  --ember:       #FF9C6B;   /* OИE */
+  --mint:        #7FD9C2;   /* HIPPI (color de interfaz, no oficial) */
+
+  /* --- Color: texto --- */
+  --halo:        #FBF8FF;
+  --muted:       #A99CC9;
+  --faint:       #6D638C;
+
+  /* --- Líneas y superficies --- */
+  --line:        rgba(174, 152, 255, .16);
+  --line-strong: rgba(174, 152, 255, .34);
+  --glass:       rgba(34, 24, 69, .48);
+
+  /* --- Tipografía --- */
+  --display: "Syne", "Zen Kaku Gothic New", system-ui, sans-serif;
+  --body:    "Zen Kaku Gothic New", "Syne", system-ui, sans-serif;
+  --mono:    "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --step--1: clamp(.78rem, .76rem + .1vw, .84rem);
+  --step-0:  clamp(.98rem, .95rem + .16vw, 1.06rem);
+  --step-1:  clamp(1.16rem, 1.08rem + .38vw, 1.38rem);
+  --step-2:  clamp(1.42rem, 1.25rem + .82vw, 2rem);
+  --step-3:  clamp(1.8rem, 1.42rem + 1.8vw, 3rem);
+  --step-4:  clamp(2.4rem, 1.6rem + 3.9vw, 5.4rem);
+
+  /* --- Ritmo --- */
+  --gutter: clamp(1.15rem, .7rem + 2.2vw, 3rem);
+  --measure: 66ch;
+  --wide: 1240px;
+  --narrow: 780px;
+
+  --space-1: .5rem;
+  --space-2: .875rem;
+  --space-3: 1.35rem;
+  --space-4: 2.15rem;
+  --space-5: 3.4rem;
+  --space-6: 5.4rem;
+  --space-7: clamp(4.5rem, 3rem + 7vw, 9rem);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --ease: cubic-bezier(.22, .68, .28, 1);
+  --dur: .55s;
+
+  --glow-rose: 0 0 48px -12px rgba(242, 169, 200, .55);
+  --glow-violet: 0 0 60px -14px rgba(142, 124, 255, .6);
+}

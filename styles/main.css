@@ -1,0 +1,12 @@
+/* ARIA STATION — hoja principal.
+   Orden: tokens -> reset -> tipografía -> layout -> componentes. */
+@import url("base/tokens.css");
+@import url("base/reset.css");
+@import url("base/typography.css");
+@import url("base/layout.css");
+@import url("components/nav.css");
+@import url("components/hero.css");
+@import url("components/ui.css");
+@import url("components/cards.css");
+@import url("components/timeline.css");
+@import url("components/characters.css");

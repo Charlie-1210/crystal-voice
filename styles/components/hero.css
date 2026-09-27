@@ -1,0 +1,153 @@
+.hero {
+  position: relative;
+  min-height: min(100svh, 900px);
+  display: grid;
+  align-items: center;
+  padding-block: var(--space-6) var(--space-7);
+  overflow: hidden;
+}
+
+.hero__grid {
+  display: grid;
+  gap: var(--space-5);
+  align-items: center;
+}
+@media (min-width: 940px) {
+  .hero__grid { grid-template-columns: 1.05fr .95fr; gap: var(--space-4); }
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--violet);
+  margin-bottom: var(--space-3);
+}
+.hero__eyebrow::before {
+  content: "";
+  width: 34px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--violet));
+}
+
+.hero__title {
+  font-size: var(--step-4);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: .92;
+}
+.hero__title .glyph {
+  display: block;
+  font-size: .3em;
+  font-weight: 600;
+  letter-spacing: .34em;
+  color: var(--rose);
+  margin-top: .9rem;
+  text-indent: .34em;
+}
+
+.hero__lede {
+  margin-top: var(--space-3);
+  font-size: var(--step-1);
+  color: var(--rose-soft);
+  max-width: 42ch;
+  line-height: 1.55;
+}
+
+.hero__actions {
+  margin-top: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+}
+
+.hero__meta {
+  margin-top: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--line);
+}
+.hero__meta div { min-width: 8rem; }
+.hero__meta dt {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.hero__meta dd {
+  font-size: .96rem;
+  color: var(--halo);
+  margin-top: .25rem;
+}
+
+/* --- Elemento firma: el anillo de resonancia --- */
+.resonator {
+  position: relative;
+  aspect-ratio: 1;
+  width: min(100%, 520px);
+  margin-inline: auto;
+  display: grid;
+  place-items: center;
+}
+.resonator svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.resonator__ring { transform-origin: 50% 50%; }
+.resonator__pulse {
+  fill: none;
+  stroke: var(--violet);
+  opacity: 0;
+  transform-origin: 50% 50%;
+  animation: pulse-out 6s var(--ease) infinite;
+}
+.resonator__pulse:nth-of-type(2) { animation-delay: 2s; }
+.resonator__pulse:nth-of-type(3) { animation-delay: 4s; }
+
+@keyframes pulse-out {
+  0%   { opacity: .55; transform: scale(.42); }
+  70%  { opacity: .08; }
+  100% { opacity: 0;   transform: scale(1.02); }
+}
+
+.resonator__spectrum { animation: spin 44s linear infinite; transform-origin: 50% 50%; }
+.resonator__spectrum line { stroke: var(--rose); stroke-linecap: round; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.resonator__core {
+  position: relative;
+  width: 62%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--glow-rose), inset 0 0 60px rgba(142,124,255,.3);
+}
+.resonator__core img { width: 100%; height: 100%; object-fit: cover; }
+
+.scrollcue {
+  position: absolute;
+  bottom: 1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--faint);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+}
+.scrollcue::after {
+  content: "";
+  width: 1px; height: 46px;
+  background: linear-gradient(var(--violet), transparent);
+  animation: cue 2.6s var(--ease) infinite;
+}
+@keyframes cue { 0%,100% { opacity: .25; } 50% { opacity: 1; } }

@@ -1,0 +1,97 @@
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(to bottom, rgba(7,5,13,.92), rgba(7,5,13,.55));
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s var(--ease);
+}
+.masthead.is-stuck { border-bottom-color: var(--line); }
+
+.masthead__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: .85rem;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: .14em;
+  font-size: .95rem;
+  text-decoration: none;
+  color: var(--halo);
+}
+.wordmark svg { width: 22px; height: 22px; flex: none; }
+.wordmark span { color: var(--rose); }
+
+.navlist {
+  display: none;
+  list-style: none;
+  margin-left: auto;
+  gap: clamp(.5rem, 1.4vw, 1.4rem);
+  align-items: center;
+}
+@media (min-width: 1080px) { .navlist { display: flex; } }
+
+.navlist a {
+  text-decoration: none;
+  font-size: .82rem;
+  letter-spacing: .06em;
+  color: var(--muted);
+  padding: .4rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color .25s var(--ease), border-color .25s var(--ease);
+}
+.navlist a:hover { color: var(--halo); }
+.navlist a[aria-current="true"] { color: var(--rose); border-bottom-color: var(--rose); }
+
+.navtoggle {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: .45rem .9rem;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--halo);
+}
+@media (min-width: 1080px) { .navtoggle { display: none; } }
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: rgba(7,5,13,.97);
+  backdrop-filter: blur(8px);
+  padding: 6rem var(--gutter) var(--gutter);
+  overflow-y: auto;
+  display: none;
+}
+.drawer[data-open="true"] { display: block; }
+.drawer ul { list-style: none; display: grid; gap: .2rem; }
+.drawer a {
+  display: block;
+  padding: .8rem 0;
+  text-decoration: none;
+  font-family: var(--display);
+  font-size: var(--step-2);
+  border-bottom: 1px solid var(--line);
+}
+.drawer__close {
+  position: absolute;
+  top: 1.4rem; right: var(--gutter);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: .5rem 1rem;
+  font-size: .78rem;
+  letter-spacing: .12em;
+}
